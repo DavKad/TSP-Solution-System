@@ -1,0 +1,6 @@
+#hBox {
+    -fx-background-color: #F5F5F5,
+    linear-gradient(#F5F5F5 0%, #C8C8C8 20%, #D3D3D3 100%),
+    linear-gradient(#F0F0F0, #A9A9A9),
+    radial-gradient(center 50% 0%, radius 100%, #F0F0F0, rgba(255, 255, 255, 0));
+}

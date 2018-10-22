@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="355.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReportController">
+   <children>
+      <BorderPane prefHeight="538.0" prefWidth="355.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <Accordion prefHeight="471.0" prefWidth="319.0" BorderPane.alignment="CENTER">
+              <panes>
+                <TitledPane animated="false" text="%Algorithm.rep">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </TitledPane>
+                <TitledPane animated="false" text="%prediction.rep">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </TitledPane>
+                <TitledPane animated="false" text="%resume.rep">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+         </center>
+         <top>
+            <Group BorderPane.alignment="CENTER">
+               <children>
+                   <MenuBar prefHeight="25.0" prefWidth="355.0">
+                       <menus>
+                           <Menu mnemonicParsing="false" text="%menuFIle.app">
+                               <items>
+                              <MenuItem mnemonicParsing="false" onAction="#saveReport" text="%save.rep" />
+                               </items>
+                           </Menu>
+                           <Menu mnemonicParsing="false" text="%menuHelp.app">
+                               <items>
+                                   <MenuItem mnemonicParsing="false" onAction="#openAbout" text="%menuItemAbout.app" />
+                               </items>
+                           </Menu>
+                       </menus>
+                   </MenuBar>
+               </children>
+            </Group>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
