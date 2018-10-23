@@ -1,6 +1,8 @@
 package controllers;
 
 import dialogs.Dialog;
+import javafx.scene.layout.BorderPane;
+import map.InteractiveMap;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import utils.UtilsConnection;
 
@@ -18,8 +19,9 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
+    private InteractiveMap map = new InteractiveMap();
     @FXML
-    private WebView mapView;
+    private BorderPane mapView;
 
     /*MenuBar methods*/
     public void closeApplication() {
@@ -51,7 +53,7 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        };
+            mapView.setCenter(map);
+        }
 }
 
