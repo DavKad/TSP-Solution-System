@@ -2,25 +2,21 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="leaflet-0.7.2/leaflet.css" />
     <style type="text/css">
         html, body {
             height: 100%;
             margin: 0;
+            width: 100%;
         }
         #map {
             min-height: 100%;
+
         }
     </style>
 </head>
 <body>
 <div id="map"></div>
-
-<script type="text/javascript" src="bck2brwsr.js"></script>
-<script>
-    var vm = bck2brwsr('l4jdemo.js');
-    var main = vm.loadClass('tsp.solution.main.Launch');
-    main.invoke('onPageLoad');
-</script>
 </body>
 </html>

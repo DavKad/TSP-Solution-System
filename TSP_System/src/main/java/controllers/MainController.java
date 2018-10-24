@@ -19,7 +19,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-    private InteractiveMap map = new InteractiveMap();
+    private final InteractiveMap map = new InteractiveMap();
     @FXML
     private BorderPane mapView;
 
@@ -53,7 +53,7 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-            mapView.setCenter(map);
+        mapView.setCenter(map);
         }
 }
 

@@ -16,9 +16,9 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="1412.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="1066.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="1412.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="1066.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
    <children>
-      <BorderPane prefHeight="635.0" prefWidth="1075.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+      <BorderPane fx:id="mapView" prefHeight="635.0" prefWidth="1075.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
          <top>
             <VBox prefHeight="63.0" prefWidth="1075.0" BorderPane.alignment="CENTER">
                <children>
@@ -44,9 +44,13 @@
                   </MenuBar>
                   <HBox fx:id="hBox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" stylesheets="@../css/searchStyle.css">
                      <children>
+                        <Region prefHeight="29.0" prefWidth="108.0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin></Region>
                         <Label text="%findRoad.app">
                            <padding>
-                              <Insets left="50.0" right="20.0" />
+                              <Insets right="20.0" />
                            </padding>
                         </Label>
                         <Label text="%fromCity.app">
@@ -97,9 +101,6 @@
                </children>
             </VBox>
          </top>
-         <center>
-            <BorderPane fx:id="mapView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-         </center>
       </BorderPane>
    </children>
 </AnchorPane>
