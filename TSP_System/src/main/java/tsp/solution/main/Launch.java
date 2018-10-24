@@ -1,3 +1,5 @@
+package tsp.solution.main;
+
 import dialogs.Dialog;
 import javafx.application.Application;
 import javafx.application.Platform;
