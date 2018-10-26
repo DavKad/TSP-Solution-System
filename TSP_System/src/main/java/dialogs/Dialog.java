@@ -17,8 +17,8 @@ public class Dialog {
         Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
         confirmationAlert.setTitle(bundles.getString("exitTitle.dialogs"));
         confirmationAlert.setHeaderText(bundles.getString("exitMessage.dialogs"));
-//        Stage dialogStage = (Stage) confirmationAlert.getDialogPane().getScene().getWindow();
-//        dialogStage.getIcons().add(new Image(Dialog.class.getResource("images/information.png").toString()));
+        Stage dialogStage = (Stage) confirmationAlert.getDialogPane().getScene().getWindow();
+        dialogStage.getIcons().add(new Image(Dialog.class.getResource("/images/information.png").toString()));
         return confirmationAlert.showAndWait();
     }
 
@@ -27,8 +27,8 @@ public class Dialog {
         information.setTitle(bundles.getString("aboutTitle.app"));
         information.setHeaderText(bundles.getString("headerAbout.app"));
         information.setContentText(bundles.getString("textAbout.app"));
-//        Stage stage = (Stage) information.getDialogPane().getScene().getWindow();
-//        stage.getIcons().add(new Image(Dialog.class.getResource("images/information.png").toString()));
+        Stage stage = (Stage) information.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(Dialog.class.getResource("/images/information.png").toString()));
         information.showAndWait();
     }
 
@@ -36,17 +36,19 @@ public class Dialog {
         Alert saved = new Alert(Alert.AlertType.INFORMATION);
         saved.setTitle(bundles.getString("savedTitle.rep"));
         saved.setHeaderText(bundles.getString("saveHeader.rep"));
-//        Stage stage = (Stage) saved.getDialogPane().getScene().getWindow();
-//        stage.getIcons().add(new Image(Dialog.class.getResource("images/information.png").toString()));
+        Stage stage = (Stage) saved.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(Dialog.class.getResource("/images/information.png").toString()));
         saved.showAndWait();
     }
 
-    public static void errorSave(String message){
+    public static void error(String message){
         Alert error = new Alert(Alert.AlertType.ERROR);
-        error.setTitle(bundles.getString("errorSavedTitle.rep"));
-        error.setHeaderText(bundles.getString("errorSavedHeader.rep"));
+        error.setTitle(bundles.getString("errorTitle.rep"));
+        error.setHeaderText(bundles.getString("errorHeader.rep"));
         TextField textField = new TextField(message);
         error.getDialogPane().setContent(textField);
         error.showAndWait();
     }
+
+
 }

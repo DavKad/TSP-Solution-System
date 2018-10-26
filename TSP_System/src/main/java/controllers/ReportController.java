@@ -21,7 +21,7 @@ public class ReportController {
             writer.close();
             Dialog.savedFile();
         } catch (IOException e) {
-            Dialog.errorSave(e.getMessage());
+            Dialog.error(e.getMessage());
         }
     }
 }

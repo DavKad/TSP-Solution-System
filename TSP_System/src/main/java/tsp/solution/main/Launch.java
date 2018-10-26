@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import utils.UtilsConnection;
 
 import java.io.IOException;
+import java.util.Locale;
 import java.util.Optional;
 
 public class Launch extends Application {
@@ -19,14 +20,14 @@ public class Launch extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-
+        Locale.setDefault(new Locale("en"));
         /*Resources*/
         AnchorPane anchorPane = UtilsConnection.getFXML("/FXML/MainWindow.fxml");
         Scene mainScene = new Scene(anchorPane);
         primaryStage.setScene(mainScene);
         primaryStage.setTitle(UtilsConnection.getBundles().getString("title.app"));
         primaryStage.getIcons().add(new Image("images/logo.png"));
-        primaryStage.setResizable(false);
+//        primaryStage.setResizable(false);
         primaryStage.show();
 
         /*Confirmed exit from application*/
