@@ -61,7 +61,7 @@
     <session id="-1184380496">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.31" value="1" />
@@ -128,15 +128,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="157" column="5" lean-forward="true" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
+            <state relative-caret-position="549">
+              <caret line="121" column="83" lean-forward="true" selection-start-line="121" selection-start-column="83" selection-end-line="121" selection-end-column="83" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#closeApplication#0;class#MainController#0" />
                 <element signature="method#openReport#0;class#MainController#0" />
                 <element signature="method#openAbout#0;class#MainController#0" />
                 <element signature="method#setLocation#0;class#MainController#0" />
-                <element signature="e#2435#4134#0" />
               </folding>
             </state>
           </provider>
@@ -328,7 +327,7 @@
     <property name="SearchEverywhereHistoryKey" value="{&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540760366149" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540760985069" />
     <property name="last_opened_file_path" value="E:/Dokumenty/IntelliJ Projects/TSP_System" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -394,12 +393,12 @@
       <workItem from="1540565779398" duration="8831000" />
       <workItem from="1540581455438" duration="14609000" />
       <workItem from="1540720836928" duration="35000" />
-      <workItem from="1540720897038" duration="30863000" />
+      <workItem from="1540720897038" duration="32177000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112636000" />
+    <option name="totallyTimeSpent" value="113950000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -822,15 +821,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="157" column="5" lean-forward="true" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
+        <state relative-caret-position="549">
+          <caret line="121" column="83" lean-forward="true" selection-start-line="121" selection-start-column="83" selection-end-line="121" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#closeApplication#0;class#MainController#0" />
             <element signature="method#openReport#0;class#MainController#0" />
             <element signature="method#openAbout#0;class#MainController#0" />
             <element signature="method#setLocation#0;class#MainController#0" />
-            <element signature="e#2435#4134#0" />
           </folding>
         </state>
       </provider>
