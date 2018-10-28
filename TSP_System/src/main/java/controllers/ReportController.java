@@ -1,6 +1,7 @@
 package controllers;
 
 import dialogs.Dialog;
+import utils.UtilsConnection;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -11,7 +12,9 @@ public class ReportController {
 
 
     public void openAbout() {
-        Dialog.aboutApplication();
+        Dialog.informationAlert(UtilsConnection.getBundles().getString("textAbout.app")
+                ,UtilsConnection.getBundles().getString("headerAbout.app")
+                ,UtilsConnection.getBundles().getString("aboutTitle.app"));
     }
 
     public void saveReport() {

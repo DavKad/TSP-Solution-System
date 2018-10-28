@@ -22,11 +22,11 @@ public class Dialog {
         return confirmationAlert.showAndWait();
     }
 
-    public static void aboutApplication() {
+    public static void informationAlert(String message, String header, String title) {
         Alert information = new Alert(Alert.AlertType.INFORMATION);
-        information.setTitle(bundles.getString("aboutTitle.app"));
-        information.setHeaderText(bundles.getString("headerAbout.app"));
-        information.setContentText(bundles.getString("textAbout.app"));
+        information.setTitle(title);
+        information.setHeaderText(header);
+        information.setContentText(message);
         Stage stage = (Stage) information.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image(Dialog.class.getResource("/images/information.png").toString()));
         information.showAndWait();
@@ -49,6 +49,5 @@ public class Dialog {
         error.getDialogPane().setContent(textField);
         error.showAndWait();
     }
-
 
 }

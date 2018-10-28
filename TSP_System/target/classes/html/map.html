@@ -4,6 +4,7 @@
     <meta charset=utf-8 />
     <title>Interactive Map</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    //MapBox API
     <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
     <style>
@@ -14,7 +15,9 @@
 <body>
 <div id='map'></div>
 <script>
+    //For MapBox
     L.accessToken = 'pk.eyJ1IjoiZGF2a2FkIiwiYSI6ImNqbnAwczA0bDA1M2EzcXFwY2Q2enh2Z3EifQ.dND5k8PZipE1DQYZsZrsSg';
+
     var map = L.map('map').setView([51.125736,17.080392]).setZoom(6);
 
     L.tileLayer(
