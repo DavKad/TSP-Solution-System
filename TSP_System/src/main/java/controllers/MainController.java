@@ -144,7 +144,7 @@ public class MainController implements Initializable {
             URL url = this.getClass().getResource("/html/anotherMap.html");
             webEngine = webView.getEngine();
             webEngine.setJavaScriptEnabled(true);
-            webEngine.load(url.toString());
+//            webEngine.load(url.toString());
         } catch (Exception e) {
             Dialog.error(UtilsConnection.getBundles().getString("error.map"));
         } finally {
