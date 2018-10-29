@@ -3,22 +3,21 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.web.WebView?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="1412.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
    <children>
-      <BorderPane prefHeight="635.0" prefWidth="1075.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+      <BorderPane prefHeight="635.0" prefWidth="1075.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <VBox prefHeight="25.0" prefWidth="1075.0" BorderPane.alignment="CENTER">
                <children>
@@ -52,63 +51,30 @@
          <center>
             <WebView fx:id="webView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
          </center>
-         <left>
-            <VBox fx:id="vBox" prefHeight="706.0" prefWidth="231.0" stylesheets="@../css/searchStyle.css" BorderPane.alignment="CENTER">
+         <right>
+            <VBox fx:id="vBox" prefHeight="706.0" prefWidth="231.0" stylesheets="@../css/searchStyle.css">
                <children>
-                  <Region prefHeight="7.0" prefWidth="181.0">
+                  <Label text="%waypoints.search">
                      <VBox.margin>
-                        <Insets bottom="5.0" left="30.0" />
-                     </VBox.margin>
-                  </Region>
-                  <Label text="%findRoad.app">
-                     <padding>
-                        <Insets right="20.0" />
-                     </padding>
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="30.0" />
+                        <Insets left="100.0" />
                      </VBox.margin>
                   </Label>
-                  <Label text="%fromCity.app">
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="30.0" />
-                     </VBox.margin>
-                  </Label>
-                  <TextField fx:id="fromField" onAction="#setLocation" prefHeight="22.0" prefWidth="191.0" promptText="%from.search">
-                     <VBox.margin>
-                        <Insets left="30.0" right="10.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <Label text="%toCity.app">
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="30.0" />
-                     </VBox.margin>
-                  </Label>
-                  <TextField fx:id="endField" promptText="%end.search">
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="30.0" right="10.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <VBox fx:id="addFieldContainer" prefHeight="39.0" prefWidth="231.0" />
-                  <Region prefHeight="473.0" prefWidth="120.0">
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="30.0" />
-                     </VBox.margin>
-                  </Region>
+                  <ListView fx:id="listOfInterest" prefHeight="665.0" prefWidth="231.0" />
                   <Button mnemonicParsing="false" onAction="#openReport" prefHeight="23.0" prefWidth="32.0">
                      <graphic>
-                        <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="34.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/research.png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <VBox.margin>
-                        <Insets bottom="5.0" left="15.0" />
+                        <Insets bottom="2.0" left="195.0" />
                      </VBox.margin>
                   </Button>
                </children>
             </VBox>
-         </left>
+         </right>
       </BorderPane>
    </children>
 </AnchorPane>
