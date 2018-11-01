@@ -8,6 +8,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import jdk.nashorn.internal.objects.annotations.Function;
 import utils.UtilsConnection;
 
 import java.io.IOException;
@@ -15,6 +16,7 @@ import java.util.Locale;
 import java.util.Optional;
 
 public class Launch extends Application {
+    @Function
     public static void main(String[] args) { Application.launch();
     }
 

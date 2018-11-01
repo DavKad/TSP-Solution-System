@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <title>Routs determination</title>
@@ -17,7 +17,6 @@
             integrity="sha512-YZ6b5bXRVwipfqul5krehD9qlbJzc6KOGXYsDjU9HHXW2gK57xmWl2gU6nAegiErAqFXhygKIsWPKbjLPXVb2g=="
             crossorigin=""></script>
 
-
     <!-- Load Esri Leaflet Geocoder from CDN -->
     <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.css"
           integrity="sha512-v5YmWLm8KqAAmg5808pETiccEohtt8rPVMGQ1jA6jqkWVydV5Cuz3nJ9fQ7ittSxvuqsvI9RSGfVoKPaAJZ/AQ=="
@@ -25,31 +24,42 @@
     <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.js"
             integrity="sha512-zdT4Pc2tIrc6uoYly2Wp8jh6EPEWaveqqD3sT0lf5yei19BC1WulGuh5CesB0ldBKZieKGD7Qyf/G0jdSe016A=="
             crossorigin=""></script>
-
     <style>
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
 <div id="map"></div>
 <script>
-
-    var map = L.map('map').setView([51.125736,17.080392], 6);
+    var map = L.map('map').setView([51.125736, 17.080392], 6);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
+    setTimeout(function () {
+        map.invalidateSize()
+    }, 400);
+
     <!-- Geocoding-->
     var searchControl = L.esri.Geocoding.geosearch().addTo(map);
-    var results = L.layerGroup().addTo(map);
-    searchControl.on('results', function(data){
-        // results.clearLayers();
+    var locations;
+    searchControl.on('results', function (data) {
         for (var i = data.results.length - 1; i >= 0; i--) {
-            results.addLayer(L.marker(data.results[i].latlng));
+            L.marker(data.results[i].latlng).addTo(map);
+            locations = data.results[i].text;
+            app.getLocation(locations);
         }
     });
-
 </script>
 </body>
 </html>

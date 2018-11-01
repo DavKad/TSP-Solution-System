@@ -12,10 +12,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="1412.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="1412.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
    <children>
       <BorderPane prefHeight="635.0" prefWidth="1075.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -59,19 +61,28 @@
                         <Insets left="100.0" />
                      </VBox.margin>
                   </Label>
-                  <ListView fx:id="listOfInterest" prefHeight="665.0" prefWidth="231.0" />
-                  <Button mnemonicParsing="false" onAction="#openReport" prefHeight="23.0" prefWidth="32.0">
-                     <graphic>
-                        <ImageView fitHeight="34.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/research.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <VBox.margin>
-                        <Insets bottom="2.0" left="195.0" />
-                     </VBox.margin>
-                  </Button>
+                  <ListView fx:id="listOfInterest" prefHeight="664.0" prefWidth="231.0" />
+                  <HBox prefHeight="15.0" prefWidth="231.0">
+                     <children>
+                        <Region prefHeight="29.0" prefWidth="129.0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Region>
+                        <Button mnemonicParsing="false" onAction="#openReport" prefHeight="29.0" prefWidth="100.0">
+                           <graphic>
+                              <ImageView fitHeight="34.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/research.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets bottom="3.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </right>

@@ -5,14 +5,17 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import jdk.nashorn.internal.objects.annotations.Function;
 import utils.UtilsConnection;
 
 import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class Dialog {
+
     private static ResourceBundle bundles = UtilsConnection.getBundles();
 
+    @Function
     public static Optional<ButtonType> closeApplicationConfirmation() {
         Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
         confirmationAlert.setTitle(bundles.getString("exitTitle.dialogs"));
@@ -22,6 +25,7 @@ public class Dialog {
         return confirmationAlert.showAndWait();
     }
 
+    @Function
     public static void informationAlert(String message, String header, String title) {
         Alert information = new Alert(Alert.AlertType.INFORMATION);
         information.setTitle(title);
@@ -32,6 +36,7 @@ public class Dialog {
         information.showAndWait();
     }
 
+    @Function
     public static void savedFile(){
         Alert saved = new Alert(Alert.AlertType.INFORMATION);
         saved.setTitle(bundles.getString("savedTitle.rep"));
@@ -41,6 +46,7 @@ public class Dialog {
         saved.showAndWait();
     }
 
+    @Function
     public static void error(String message){
         Alert error = new Alert(Alert.AlertType.ERROR);
         error.setTitle(bundles.getString("errorTitle.rep"));
