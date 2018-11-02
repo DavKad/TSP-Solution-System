@@ -203,8 +203,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/html/mainMap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="64" column="7" lean-forward="true" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
+            <state relative-caret-position="410">
+              <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
               <folding>
                 <element signature="n#link#0;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
@@ -375,7 +375,7 @@
     <property name="SearchEverywhereHistoryKey" value="{&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541112529152" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541156085609" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -447,12 +447,12 @@
       <workItem from="1540923111052" duration="4026000" />
       <workItem from="1540936723621" duration="2400000" />
       <workItem from="1540973228491" duration="30335000" />
-      <workItem from="1541067433117" duration="19158000" />
+      <workItem from="1541067433117" duration="19797000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186539000" />
+    <option name="totallyTimeSpent" value="187178000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -842,8 +842,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/html/mainMap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="64" column="7" lean-forward="true" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
+        <state relative-caret-position="410">
+          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
           <folding>
             <element signature="n#link#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
