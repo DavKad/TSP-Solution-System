@@ -52,14 +52,35 @@
 
     <!-- Geocoding-->
     var searchControl = L.esri.Geocoding.geosearch().addTo(map);
-    var locations;
+    var markers = [];
+    var marker;
     searchControl.on('results', function (data) {
         for (var i = data.results.length - 1; i >= 0; i--) {
-            L.marker(data.results[i].latlng).addTo(map);
-            locations = data.results[i].text;
-            app.getLocation(locations);
+            marker = L.marker(data.results[i].latlng, {id: data.results[i].text}).addTo(map);
+            markers.push(marker);
+            marker.on('click', removeMarker);
+            app.getLocation(data.results[i].text);
         }
     });
+    <!-- Geocoding reversed-->
+    var geocodeService = L.esri.Geocoding.geocodeService();
+    map.on('click', function(e){
+       geocodeService.reverse().latlng(e.latlng).run(function(error,result){
+           marker = L.marker(result.latlng, {id: result.address.Match_addr}).addTo(map);
+           markers.push(marker);
+           marker.on('click', removeMarker);
+           app.getAddress(result.address.Match_addr);
+       })
+    });
+
+    function removeMarker(){
+        for(var i in markers){
+            if(this.options.id === markers[i].options.id){
+                map.removeLayer(this);
+                app.removeLocation(this.options.id);
+                }
+            }
+    }
 </script>
 </body>
 </html>

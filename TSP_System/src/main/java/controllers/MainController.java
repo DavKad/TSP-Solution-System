@@ -67,14 +67,24 @@ public class MainController implements Initializable {
     }
 
     @Function
-    private void setFunctionHandlerInHTML(WebEngine engine){
+    private void setFunctionHandlerInHTML(WebEngine engine, String name, Object object){
         JSObject window = (JSObject) engine.executeScript("window");
-        window.setMember("app", this);
+        window.setMember(name, object);
     }
 
     @Function
     public void getLocation(String location){
         listOfInterest.getItems().add(location);
+    }
+
+    @Function
+    public void getAddress(String address){
+        listOfInterest.getItems().add(address);
+    }
+
+    @Function
+    public void removeLocation(String location){
+        listOfInterest.getItems().remove(location);
     }
 
     @Override
@@ -87,7 +97,7 @@ public class MainController implements Initializable {
             webEngine.setJavaScriptEnabled(true);
             webEngine.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
                 if(newValue == Worker.State.SUCCEEDED){
-                    setFunctionHandlerInHTML(webEngine);
+                    setFunctionHandlerInHTML(webEngine, "app", this);
                 }
             });
             webEngine.load(url.toString());
