@@ -2,6 +2,7 @@ package controllers;
 
 import dialogs.Dialog;
 import javafx.concurrent.Worker;
+import javafx.scene.control.Button;
 import netscape.javascript.JSObject;
 import utils.UtilsConnection;
 import javafx.scene.control.ListView;
@@ -26,6 +27,9 @@ public class MainController implements Initializable {
 
     @FXML
     public WebView webView;
+
+    @FXML
+    public Button clearButton;
 
     @FXML
     private ListView<String> listOfInterest;
@@ -106,6 +110,7 @@ public class MainController implements Initializable {
         } finally {
             webEngine.reload();
         }
+        clearButton.setOnAction(event -> webEngine.executeScript("control.getPlan().setWaypoints([]);"));
     }
 }
 

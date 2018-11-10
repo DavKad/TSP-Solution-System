@@ -24,6 +24,11 @@
     <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.js"
             integrity="sha512-zdT4Pc2tIrc6uoYly2Wp8jh6EPEWaveqqD3sT0lf5yei19BC1WulGuh5CesB0ldBKZieKGD7Qyf/G0jdSe016A=="
             crossorigin=""></script>
+
+    <!-- Load Leaflet Routing Machine -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css"/>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
     <style>
         body {
             margin: 0;
@@ -50,7 +55,6 @@
         map.invalidateSize()
     }, 400);
 
-    <!-- Geocoding-->
     var searchControl = L.esri.Geocoding.geosearch().addTo(map);
     var markers = [];
     var marker;
@@ -58,29 +62,58 @@
         for (var i = data.results.length - 1; i >= 0; i--) {
             marker = L.marker(data.results[i].latlng, {id: data.results[i].text}).addTo(map);
             markers.push(marker);
+            coordinatesArray(marker);
+            createRoute(routingArray);
             marker.on('click', removeMarker);
             app.getLocation(data.results[i].text);
         }
     });
-    <!-- Geocoding reversed-->
-    var geocodeService = L.esri.Geocoding.geocodeService();
-    map.on('click', function(e){
-       geocodeService.reverse().latlng(e.latlng).run(function(error,result){
-           marker = L.marker(result.latlng, {id: result.address.Match_addr}).addTo(map);
-           markers.push(marker);
-           marker.on('click', removeMarker);
-           app.getAddress(result.address.Match_addr);
-       })
-    });
 
-    function removeMarker(){
-        for(var i in markers){
-            if(this.options.id === markers[i].options.id){
-                map.removeLayer(this);
-                app.removeLocation(this.options.id);
-                }
+    var geocodeService = L.esri.Geocoding.geocodeService();
+    map.on('click', function (e) {
+        geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
+            marker = L.marker(result.latlng, {id: result.address.Match_addr}).addTo(map);
+            markers.push(marker);
+            coordinatesArray(marker);
+            createRoute(routingArray);
+            marker.on('click', removeMarker);
+            app.getAddress(result.address.Match_addr);
+        })
+    });
+    var routingArray = [];
+    var control = L.Routing.control({
+        show: false,
+        createMarker: function () {
+            return null;
+        },
+        routeWhileDragging: false,
+        lineOptions: {
+            styles: [{color: 'black', opacity: 0.15, weight: 9},
+                {color: 'white', opacity: 0.8, weight: 6},
+                {color: 'orange', opacity: 1, weight: 2}]
+        }
+    }).addTo(map);
+
+    function removeMarker() {
+        map.removeLayer(this);
+        markers.splice(this,1);
+        for(var i in routingArray){
+            if(this.getLatLng().equals(routingArray[i])){
+                routingArray.splice(i, 1);
+                control.spliceWaypoints(i, 1);
             }
+        }
+        app.removeLocation(this.options.id);
     }
+
+    function coordinatesArray(marker) {
+        routingArray.push(new L.LatLng(marker.getLatLng().lat, marker.getLatLng().lng));
+    }
+
+    function createRoute(toRoutingArray) {
+        control.setWaypoints(toRoutingArray);
+    }
+
 </script>
 </body>
 </html>

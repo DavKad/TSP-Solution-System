@@ -65,7 +65,8 @@
                   <Separator prefWidth="200.0" />
                   <HBox prefHeight="15.0" prefWidth="231.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#openReport" prefHeight="34.0" prefWidth="231.0">
+                        <Button fx:id="clearButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="115.0" text="%clearRoute.app" />
+                        <Button mnemonicParsing="false" onAction="#openReport" prefHeight="44.0" prefWidth="117.0">
                            <graphic>
                               <ImageView fitHeight="88.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

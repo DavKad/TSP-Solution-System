@@ -138,27 +138,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="5316" />
-          <entry key="java" value="3670" />
+          <entry key="html" value="9229" />
+          <entry key="java" value="3718" />
           <entry key="js" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="5316" />
-          <entry key="JAVA" value="3670" />
+          <entry key="HTML" value="9229" />
+          <entry key="JAVA" value="3718" />
           <entry key="JavaScript" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="fxml" value="5" />
+          <entry key="fxml" value="9" />
           <entry key="html" value="9" />
-          <entry key="java" value="38" />
-          <entry key="js" value="1" />
+          <entry key="java" value="39" />
+          <entry key="js" value="2" />
           <entry key="png" value="1" />
-          <entry key="properties" value="3" />
+          <entry key="properties" value="4" />
           <entry key="ts" value="1" />
           <entry key="xml" value="3" />
         </counts>
@@ -168,11 +168,11 @@
           <entry key="CLASS" value="1" />
           <entry key="HTML" value="9" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="38" />
-          <entry key="JavaScript" value="1" />
-          <entry key="Properties" value="3" />
+          <entry key="JAVA" value="39" />
+          <entry key="JavaScript" value="2" />
+          <entry key="Properties" value="4" />
           <entry key="TypeScript" value="1" />
-          <entry key="XML" value="8" />
+          <entry key="XML" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.mvc.usages" />
@@ -186,8 +186,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="823">
-              <caret line="99" column="69" lean-forward="true" selection-start-line="99" selection-start-column="69" selection-end-line="99" selection-end-column="69" />
+            <state relative-caret-position="381">
+              <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#closeApplication#0;class#MainController#0" />
@@ -199,11 +199,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/ReportController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="23" column="90" selection-start-line="23" selection-start-column="90" selection-end-line="23" selection-end-column="90" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/html/mainMap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="80" column="17" lean-forward="true" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+            <state relative-caret-position="697">
+              <caret line="104" column="9" lean-forward="true" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
               <folding>
                 <element signature="n#link#0;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
@@ -211,6 +220,7 @@
                 <element signature="n#link#1;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#script#2;n#head#0;n#html#0;n#!!top" />
                 <element signature="e#0#6#0" expanded="true" />
+                <element signature="e#3372#3742#0" />
               </folding>
             </state>
           </provider>
@@ -255,7 +265,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/html/mapGL.html" />
         <option value="$PROJECT_DIR$/src/main/java/properties/SearchProperties.java" />
         <option value="$PROJECT_DIR$/src/main/resources/html/newMAp.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/html/new.html" />
         <option value="$PROJECT_DIR$/src/main/resources/html/map.html" />
         <option value="$PROJECT_DIR$/src/main/resources/html/map2.html" />
@@ -266,6 +275,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/js/geocoding.js" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/Bridge.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/ReportController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/FXML/MainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/html/mainMap.html" />
@@ -354,6 +364,14 @@
               <item name="TSP_System" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TSP_System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TSP_System" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -362,7 +380,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="FXML" type="462c0819:PsiDirectoryNode" />
+              <item name="bundles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TSP_System" type="b2602c69:ProjectViewProjectNode" />
@@ -382,7 +400,7 @@
     <property name="SearchEverywhereHistoryKey" value="{&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541670951956" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541883739798" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -393,15 +411,15 @@
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Git_ROOT\TSP Solution System\TSP_System\src\main\resources\leaflet\locate" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Git_ROOT\TSP Solution System\TSP_System\src\main\resources\javascript" />
       <recent name="E:\Git_ROOT\TSP Solution System\TSP_System\src\main\resources\leaflet" />
       <recent name="E:\Dokumenty\IntelliJ Projects\TSP_System\src\main\resources\html" />
       <recent name="E:\Dokumenty\IntelliJ Projects\TSP_System\src\main\resources\FXML" />
       <recent name="E:\Dokumenty\IntelliJ Projects\TSP_System\src\main\resources\images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Git_ROOT\TSP Solution System\TSP_System\src\main\resources\leaflet\locate" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -455,12 +473,12 @@
       <workItem from="1540936723621" duration="2400000" />
       <workItem from="1540973228491" duration="30335000" />
       <workItem from="1541067433117" duration="20520000" />
-      <workItem from="1541438430046" duration="24544000" />
+      <workItem from="1541438430046" duration="67139000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212445000" />
+    <option name="totallyTimeSpent" value="255040000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -481,7 +499,7 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Learn" order="4" weight="0.32995737" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.13272922" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.13272922" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50053304" side_tool="true" weight="0.3264642" />
@@ -553,13 +571,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/searchStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/html/mapLoader.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/leaflet/leaflet.css" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -660,7 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_api.tiles.mapbox.com_mapbox-gl-js_v0.50.0_mapbox-gl.js" />
     <entry file="file://$PROJECT_DIR$/src/main/java/properties/SearchProperties.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/html/new.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/html/map.html" />
@@ -749,13 +759,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/images/research.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/ReportController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" column="90" selection-start-line="23" selection-start-column="90" selection-end-line="23" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/Programy/jdk1.8.0_161/javafx-src.zip!/com/sun/javafx/binding/ExpressionHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -791,26 +794,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/bundles/messages.properties">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_api.tiles.mapbox.com_mapbox-gl-js_v0.50.0_mapbox-gl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
-      <provider selected="true" editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/bundles/messages.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="22" selection-end-column="21" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/MainWindow.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="19" column="164" selection-start-line="19" selection-start-column="164" selection-end-line="19" selection-end-column="164" />
+          <caret line="67" column="43" lean-forward="true" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/ReportWindow.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/ReportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="23" column="90" selection-start-line="23" selection-start-column="90" selection-end-line="23" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="823">
-          <caret line="99" column="69" lean-forward="true" selection-start-line="99" selection-start-column="69" selection-end-line="99" selection-end-column="69" />
+        <state relative-caret-position="381">
+          <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#closeApplication#0;class#MainController#0" />
@@ -823,8 +846,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/html/mainMap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="80" column="17" lean-forward="true" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+        <state relative-caret-position="697">
+          <caret line="104" column="9" lean-forward="true" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
           <folding>
             <element signature="n#link#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
@@ -832,6 +855,7 @@
             <element signature="n#link#1;n#head#0;n#html#0;n#!!top" />
             <element signature="n#script#2;n#head#0;n#html#0;n#!!top" />
             <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#3372#3742#0" />
           </folding>
         </state>
       </provider>
