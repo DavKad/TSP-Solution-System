@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css"/>
     <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 
+    <script src="javascript/lrm-esri.js"></script>
+
     <style>
         body {
             margin: 0;
@@ -47,7 +49,7 @@
 <div id="map"></div>
 <script>
     var map = L.map('map').setView([51.125736, 17.080392], 6);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
@@ -81,7 +83,13 @@
         })
     });
     var routingArray = [];
+    var distance, time;
     var control = L.Routing.control({
+        // router: L.Routing.esri({
+        //     profile: 'Driving',
+        //     serviceUrl: 'https://utility.arcgis.com/usrsvcs/appservices/AUBuin7gkrOvg7Fu/rest/services/World/Route/NAServer/Route_World/solve'
+        // }),
+        router: L.Routing.mapbox('ACCESS TOKEN'),
         show: false,
         createMarker: function () {
             return null;
@@ -96,9 +104,9 @@
 
     function removeMarker() {
         map.removeLayer(this);
-        markers.splice(this,1);
-        for(var i in routingArray){
-            if(this.getLatLng().equals(routingArray[i])){
+        markers.splice(this, 1);
+        for (var i in routingArray) {
+            if (this.getLatLng().equals(routingArray[i])) {
                 routingArray.splice(i, 1);
                 control.spliceWaypoints(i, 1);
             }
@@ -114,6 +122,18 @@
         control.setWaypoints(toRoutingArray);
     }
 
+    control.on('routesfound', function (e) {
+        var nodeA, nodeB;
+        distance = e.routes[0].summary.totalDistance;
+        time = e.routes[0].summary.totalTime;
+        for (var i = 0; i < markers.length; i++) {
+            if (i >= 1) {
+                nodeA = markers[i - 1].options.id;
+                nodeB = markers[i].options.id;
+            }
+        }
+         app.setRouteProperties(time, distance, nodeA, nodeB);
+    });
 </script>
 </body>
 </html>

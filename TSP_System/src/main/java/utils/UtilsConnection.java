@@ -1,10 +1,10 @@
 package utils;
 
-        import javafx.fxml.FXMLLoader;
-        import javafx.scene.layout.AnchorPane;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
 
-        import java.io.IOException;
-        import java.util.ResourceBundle;
+import java.io.IOException;
+import java.util.ResourceBundle;
 
 public class UtilsConnection {
 
@@ -13,7 +13,9 @@ public class UtilsConnection {
         loader.setResources(getBundles());
         return loader.load();
     }
-    public static ResourceBundle getBundles(){
+
+    public static ResourceBundle getBundles() {
         return ResourceBundle.getBundle("bundles/messages");
     }
+
 }
