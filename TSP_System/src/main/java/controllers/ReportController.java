@@ -2,10 +2,11 @@ package controllers;
 
 import dialogs.Dialog;
 import javafx.fxml.FXML;
+import jdk.nashorn.internal.objects.annotations.Function;
+import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
-import jdk.nashorn.internal.objects.annotations.Function;
 import utils.UtilsConnection;
 
 import java.io.BufferedWriter;
@@ -15,8 +16,7 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-
-public class ReportController{
+public class ReportController {
 
     @FXML
     public TextFlow dataContainer;
@@ -25,60 +25,64 @@ public class ReportController{
     public AnchorPane toClose;
 
     @Function
-    public void setText(Double time, Double distance, ArrayList<RouteProperties> list) {
-        if(list.size() >= 1) {
-            DecimalFormat value = new DecimalFormat("#.00");
-            for (RouteProperties x : list) {
-                if (time >= 3600) {
-                    String propTime = value.format(x.getTime() / 3600);
-                    String propDistance = value.format(x.getDistance());
-                    Text text = new Text();
-                    text.setText("Time requaired from: " + x.getNodeA() + " to " + x.getNodeB() + ": \n" +
-                            "   " + propTime + " hours. \n" +
-                            "\n" +
-                            "Distance requaired from: " + x.getNodeA() + " to " + x.getNodeB() + ": \n" +
-                            "   " + propDistance + " km. \n" +
-                            "\n");
-                    dataContainer.getChildren().add(text);
-                } else {
-                    String propTime = value.format(x.getTime() / 60);
-                    String propDistance = value.format(x.getDistance());
-                    Text text = new Text();
-                    text.setText("Time requaired from: " + x.getNodeA() + " to " + x.getNodeB() + ": \n" +
-                            "   " + propTime + " minutes. \n" +
-                            "\n" +
-                            "Distance requaired from: " + x.getNodeA() + " to " + x.getNodeB() + ": \n" +
-                            "   " + propDistance + " km. \n" +
-                            "\n");
-                    dataContainer.getChildren().add(text);
-                }
-            }
-            if (time >= 3600) {
-                Text text = new Text();
-                String propTotalTime = value.format(time / 3600);
-                String propTotalDistance = value.format(distance);
-                text.setText("Total time for determined route: \n" +
-                        "   " + propTotalTime + " hours. \n" +
-                        "\n" +
-                        "Total distance for determined route: \n" +
-                        "   " + propTotalDistance + " km. \n" +
-                        "\n");
-                dataContainer.getChildren().add(text);
-            } else {
-                Text text = new Text();
-                String propTotalTime = value.format(time / 60);
-                String propTotalDistance = value.format(distance);
-                text.setText("Total time for determined route: \n" +
-                        "   " + propTotalTime + " minutes. \n" +
-                        "\n" +
-                        "Total distance for determined route: \n" +
-                        "   " + propTotalDistance + " km. \n" +
-                        "\n");
-                dataContainer.getChildren().add(text);
-            }
-        }else{
-            Text text = new Text("No routes determinated");
+    public String timeFormat(long totalSecs){
+        long hours = totalSecs / 3600;
+        long minutes = (totalSecs % 3600) / 60;
+        long seconds = totalSecs % 60;
+        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+    }
+
+    @Function
+    public void setText(long time, Double distance, ArrayList<RouteProperties> list) {
+        DecimalFormat value = new DecimalFormat("#.00");
+        long setTimeValue;
+        double setDistanceValue;
+        if (list.size() < 1) {
+            Text text = new Text();
+            text.setText("No routes determined.");
             dataContainer.getChildren().add(text);
+        } else {
+            if (list.size() == 1) {
+                String propDistance = value.format(list.get(0).getDistance());
+                Text text = new Text();
+                text.setText("Total time and distance for the determined route:\n" +
+                        "   -> " + timeFormat(list.get(0).getTime()) + " \n" +
+                        "   -> " + propDistance + " km." +
+                        "\n");
+                dataContainer.getChildren().add(text);
+            }
+
+            if (list.size() > 1) {
+                for (int i = 0; i < list.size(); i++) {
+                    if (i == 0) {
+                        String propDistance = value.format(list.get(i).getDistance());
+                        Text text = new Text();
+                        text.setText("Time and distance required from: " + list.get(i).getNodeA() + " to " + list.get(i).getNodeB() + ": \n" +
+                                "   -> " + timeFormat(list.get(i).getTime()) + "\n" +
+                                "   -> " + propDistance + " km." +
+                                "\n");
+                        dataContainer.getChildren().add(text);
+                    }
+                    if (i >= 1) {
+                        setTimeValue = list.get(i).getTime() - list.get(i - 1).getTime();
+                        setDistanceValue = list.get(i).getDistance() - list.get(i - 1).getDistance();
+                        String propDistance = value.format(setDistanceValue);
+                        Text text = new Text();
+                        text.setText("Time and distance required from: " + list.get(i).getNodeA() + " to " + list.get(i).getNodeB() + ": \n" +
+                                "  -> " + timeFormat(setTimeValue) + " \n" +
+                                "  ->  " + propDistance + " km." +
+                                "\n");
+                        dataContainer.getChildren().add(text);
+                    }
+                }
+                String wellDistance = value.format(distance);
+                Text totalData = new Text();
+                totalData.setText("Total time and distance for the determined route:\n" +
+                        "   -> " + timeFormat(time) +" \n" +
+                        "   -> " + wellDistance + " km." +
+                        "\n");
+                dataContainer.getChildren().add(totalData);
+            }
         }
     }
 
@@ -91,9 +95,15 @@ public class ReportController{
 
     @Function
     public void saveReport() {
+        StringBuilder content = new StringBuilder();
+        for (Node x : dataContainer.getChildren()) {
+            if (x instanceof Text) {
+                content.append(((Text) x).getText());
+            }
+        }
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(new File("Report.pdf")));
-            //TODO Get a data from Node.
+            BufferedWriter writer = new BufferedWriter(new FileWriter(new File("Report.txt")));
+            writer.write(content.toString());
             writer.close();
             Dialog.savedFile();
         } catch (IOException e) {

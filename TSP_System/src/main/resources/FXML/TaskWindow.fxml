@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.2677966101694915" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="226.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TaskController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Label opacity="0.5" text="Localization:" />
+            <Label fx:id="localization" layoutY="18.0" prefHeight="39.0" prefWidth="449.0" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="18.0" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="258.0">
+         <children>
+            <Label opacity="0.5" text="Description:" />
+            <Label opacity="0.5" text="80 letters max." AnchorPane.rightAnchor="0.0" />
+            <TextArea fx:id="taskText" layoutX="50.0" layoutY="15.0" prefHeight="113.0" prefWidth="449.0" promptText="%taskContent.task" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0" />
+            <Button fx:id="cancelButton" layoutX="192.0" layoutY="159.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="%cancel.task" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" />
+            <Button fx:id="saveButton" layoutX="57.0" layoutY="135.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="%save.task" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="90.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

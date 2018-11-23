@@ -37,7 +37,7 @@ public class Dialog {
     }
 
     @Function
-    public static void savedFile(){
+    public static void savedFile() {
         Alert saved = new Alert(Alert.AlertType.INFORMATION);
         saved.setTitle(bundles.getString("savedTitle.rep"));
         saved.setHeaderText(bundles.getString("saveHeader.rep"));
@@ -47,12 +47,11 @@ public class Dialog {
     }
 
     @Function
-    public static void error(String message){
+    public static void error(String message) {
         Alert error = new Alert(Alert.AlertType.ERROR);
         error.setTitle(bundles.getString("errorTitle.rep"));
         error.setHeaderText(bundles.getString("errorHeader.rep"));
-        TextField textField = new TextField(message);
-        error.getDialogPane().setContent(textField);
+        error.setContentText(message);
         error.showAndWait();
     }
 

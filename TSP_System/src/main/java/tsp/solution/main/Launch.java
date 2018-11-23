@@ -29,7 +29,7 @@ public class Launch extends Application {
         primaryStage.setScene(mainScene);
         primaryStage.setTitle(UtilsConnection.getBundles().getString("title.app"));
         primaryStage.getIcons().add(new Image("images/logo.png"));
-//        primaryStage.setResizable(false);
+        primaryStage.setResizable(false);
         primaryStage.show();
 
         /*Confirmed exit from application*/

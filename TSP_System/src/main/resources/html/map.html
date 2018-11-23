@@ -50,7 +50,7 @@
 <script>
     var map = L.map('map').setView([51.125736, 17.080392], 6);
     L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'
+        attribution: 'Map data: &copy;<a href="https://osm.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
     setTimeout(function () {
@@ -60,9 +60,39 @@
     var searchControl = L.esri.Geocoding.geosearch().addTo(map);
     var markers = [];
     var marker;
+    var removedMarker;
+    var locToPopup;
+    var routingArray = [];
+    var nodeA, nodeB;
+    var distance = null, time = null;
+
+    var control = L.Routing.control({
+        // router: L.Routing.esri({
+        //     profile: 'Driving',
+        //     serviceUrl: 'https://utility.arcgis.com/usrsvcs/appservices/AUBuin7gkrOvg7Fu/rest/services/World/Route/NAServer/Route_World/solve'
+        // }),
+        router: L.Routing.mapbox('pk.eyJ1IjoiZGF2a2FkIiwiYSI6ImNqb2lzMWplMDBiYWozd21ueHdudmh4Y2UifQ.WvNrn1HbckIchZXorMv2tg'),
+        show: false,
+        createMarker: function () {
+            return null;
+        },
+        addWaypoints: false,
+        lineOptions: {
+            styles: [{color: 'black', opacity: 0.15, weight: 9},
+                {color: 'white', opacity: 0.8, weight: 6},
+                {color: 'orange', opacity: 1, weight: 2}]
+        }
+    }).addTo(map);
+
     searchControl.on('results', function (data) {
         for (var i = data.results.length - 1; i >= 0; i--) {
             marker = L.marker(data.results[i].latlng, {id: data.results[i].text}).addTo(map);
+            marker.on("mouseover", showPopup);
+            marker.on("mouseover", function () {
+                locToPopup = this.options.id;
+                app.printFoo(locToPopup);
+            });
+            marker.bindPopup(marker.options.id + '<br/><button onclick="app.openTask()" type="button">Add task..</button>');
             markers.push(marker);
             coordinatesArray(marker);
             createRoute(routingArray);
@@ -75,41 +105,42 @@
     map.on('click', function (e) {
         geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
             marker = L.marker(result.latlng, {id: result.address.Match_addr}).addTo(map);
+            marker.on("mouseover", showPopup);
+            marker.on("mouseover", function () {
+               locToPopup = this.options.id;
+               app.printFoo(locToPopup);
+            });
+            marker.bindPopup(marker.options.id + '<br/><button onclick="app.openTask()" type="button">Add task..</button>');
             markers.push(marker);
             coordinatesArray(marker);
             createRoute(routingArray);
             marker.on('click', removeMarker);
-            app.getAddress(result.address.Match_addr);
+            app.getLocation(result.address.Match_addr);
         })
     });
-    var routingArray = [];
-    var distance, time;
-    var control = L.Routing.control({
-        // router: L.Routing.esri({
-        //     profile: 'Driving',
-        //     serviceUrl: 'https://utility.arcgis.com/usrsvcs/appservices/AUBuin7gkrOvg7Fu/rest/services/World/Route/NAServer/Route_World/solve'
-        // }),
-        router: L.Routing.mapbox('ACCESS TOKEN'),
-        show: false,
-        createMarker: function () {
-            return null;
-        },
-        routeWhileDragging: false,
-        lineOptions: {
-            styles: [{color: 'black', opacity: 0.15, weight: 9},
-                {color: 'white', opacity: 0.8, weight: 6},
-                {color: 'orange', opacity: 1, weight: 2}]
-        }
-    }).addTo(map);
+
+    function showPopup() {
+        this.openPopup();
+    }
+
 
     function removeMarker() {
         map.removeLayer(this);
-        markers.splice(this, 1);
+        removedMarker = this.options.id;
+        for (var i = 0; i < markers.length; i++) {
+            if (markers[i].options.id === this.options.id) {
+                markers.splice(i, 1);
+            }
+        }
         for (var i in routingArray) {
             if (this.getLatLng().equals(routingArray[i])) {
                 routingArray.splice(i, 1);
                 control.spliceWaypoints(i, 1);
             }
+        }
+        if (markers.length === 1) {
+            app.clearRoute();
+            removedMarker = undefined;
         }
         app.removeLocation(this.options.id);
     }
@@ -123,7 +154,6 @@
     }
 
     control.on('routesfound', function (e) {
-        var nodeA, nodeB;
         distance = e.routes[0].summary.totalDistance;
         time = e.routes[0].summary.totalTime;
         for (var i = 0; i < markers.length; i++) {
@@ -132,8 +162,16 @@
                 nodeB = markers[i].options.id;
             }
         }
-         app.setRouteProperties(time, distance, nodeA, nodeB);
+        if (removedMarker === undefined) {
+            app.setRouteProperties(time, distance, nodeA, nodeB);
+        } else {
+            if (removedMarker === nodeA || removedMarker === nodeB) {
+                app.removeRouteSegment(removedMarker);
+                removedMarker = undefined;
+            }
+        }
     });
+
 </script>
 </body>
 </html>

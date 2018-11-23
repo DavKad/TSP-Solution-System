@@ -1,19 +1,23 @@
 package controllers;
 
 import dialogs.Dialog;
+import javafx.beans.InvalidationListener;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.concurrent.Worker;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.VBox;
+import javafx.stage.StageStyle;
 import jdk.nashorn.internal.objects.annotations.Getter;
 import netscape.javascript.JSObject;
 import utils.UtilsConnection;
-import javafx.scene.control.ListView;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.application.Platform;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -35,16 +39,44 @@ public class MainController implements Initializable {
     public Button clearButton;
 
     @FXML
+    private TableView<TaskProperty> table;
+
+    @FXML
+    public TableColumn<TaskProperty, String> localization = new TableColumn<>();
+
+    @FXML
+    public TableColumn<TaskProperty, String> description = new TableColumn<>();
+    private ObservableList<TaskProperty> taskList = FXCollections.observableArrayList();
+
+    @FXML
     private ListView<String> listOfInterest;
 
     //Variables to load map page
     private WebEngine webEngine;
-    private ArrayList<RouteProperties> listOfData = new ArrayList<>();
-    private Double time;
-    private Double distance;
+    private ArrayList<RouteProperties> getRouteData = new ArrayList<>();
+    private long time = 0;
+    private Double distance = 0.0;
+    private String NodeA;
+    private String NodeB;
+    private String nameOfPlace;
 
     @Getter
-    private Double getTime() {
+    private String getNameOfPlace() {
+        return nameOfPlace;
+    }
+
+    @Getter
+    private String getNodeA() {
+        return NodeA;
+    }
+
+    @Getter
+    private String getNodeB() {
+        return NodeB;
+    }
+
+    @Getter
+    private long getTime() {
         return time;
     }
 
@@ -53,11 +85,74 @@ public class MainController implements Initializable {
         return distance;
     }
 
+    /*Extract data from JS*/
+    @Function
+    public void printFoo(String loc){
+        this.nameOfPlace = loc;
+    }
+
+    @Function
+    public void removeRouteSegment(String localization) {
+        getRouteData.removeIf(s -> s.getNodeA().equals(localization) || s.getNodeB().equals(localization));
+    }
+
+    @Function
+    public void clearRoute() {
+        getRouteData.clear();
+    }
+
     @Function
     public void setRouteProperties(String time, Double distance, String nodeA, String nodeB) {
-        this.time = Double.parseDouble(time);
+        Double dTime = Double.parseDouble(time);
+        this.time = dTime.longValue();
         this.distance = distance / 1000;
-        listOfData.add(new RouteProperties(this.getTime(), this.getDistance(), nodeA, nodeB));
+        this.NodeA = nodeA;
+        this.NodeB = nodeB;
+        getRouteData.add(new RouteProperties(this.getTime(), this.getDistance(), this.getNodeA(), this.getNodeB()));
+    }
+
+    @Function
+    public void openTask(){
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(this.getClass().getResource("/FXML/TaskWindow.fxml"));
+            loader.setResources(UtilsConnection.getBundles());
+            SplitPane splitPane = loader.load();
+            TaskController passData = loader.getController();
+            passData.setText(this.getNameOfPlace());
+            passData.getTaskStatusProperty().addListener(s -> {
+                taskList.add(new TaskProperty(passData.getLocalization(), passData.getTask()));
+                table.setItems(taskList);
+            });
+            Scene scene = new Scene(splitPane);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.getIcons().add(new Image("images/logo.png"));
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            Dialog.error(UtilsConnection.getBundles().getString("error.task") + e.getMessage());
+        }
+
+    }
+
+    @Function
+    public void getLocation(String location) {
+        listOfInterest.getItems().add(location);
+    }
+
+    @Function
+    public void removeLocation(String location) {
+        listOfInterest.getItems().remove(location);
+        if(!(table.getItems() ==null)){
+            for(int i = 0; i <table.getItems().size(); i++){
+                TaskProperty x = table.getItems().get(i);
+                if(x.getLocalization().equals(location)){
+                    table.getItems().remove(x);
+                }
+            }
+        }
     }
 
     /*MenuBar methods*/
@@ -74,10 +169,10 @@ public class MainController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(this.getClass().getResource("/FXML/ReportWindow.fxml"));
-            loader.setResources(ResourceBundle.getBundle("bundles/messages"));
+            loader.setResources(UtilsConnection.getBundles());
             AnchorPane anchorPane = loader.load();
             ReportController passData = loader.getController();
-            passData.setText(this.getTime(), this.getDistance(), listOfData);
+            passData.setText(this.getTime(), this.getDistance(), getRouteData);
             Scene scene = new Scene(anchorPane);
             Stage stage = new Stage();
             stage.setScene(scene);
@@ -86,7 +181,7 @@ public class MainController implements Initializable {
             stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
-            e.printStackTrace();
+            Dialog.error(UtilsConnection.getBundles().getString("reportError.rep") + e.getMessage());
         }
 
     }
@@ -103,22 +198,6 @@ public class MainController implements Initializable {
     private void setFunctionHandlerInHTML(WebEngine engine, String name, Object object) {
         JSObject window = (JSObject) engine.executeScript("window");
         window.setMember(name, object);
-    }
-
-    @Function
-    public void getLocation(String location) {
-        listOfInterest.getItems().add(location);
-    }
-
-    @Function
-    public void getAddress(String address) {
-        listOfInterest.getItems().add(address);
-    }
-
-    @Function
-    public void removeLocation(String location) {
-        listOfInterest.getItems().remove(location);
-        listOfData.removeIf(s -> s.getNodeA().equals(location) | s.getNodeB().equals(location));
     }
 
     @Override
@@ -147,11 +226,43 @@ public class MainController implements Initializable {
                     "for(var i = 0; i < markers.length; i++){" +
                     "map.removeLayer(markers[i]);" +
                     "}" +
-                    "markers.splice(0, markers.length);"
+                    "markers.splice(0, markers.length);" +
+                    "removedMarker = undefined;"
             );
             listOfInterest.getItems().clear();
-            listOfData.clear();
+            table.getItems().clear();
+            getRouteData.clear();
         });
+
+        localization.setCellValueFactory(new PropertyValueFactory<>("Localization"));
+        description.setCellValueFactory(new PropertyValueFactory<>("Description"));
+
+        table.getSelectionModel().getSelectedCells().addListener((InvalidationListener) select -> {
+            ObservableList<TaskProperty> getTaskProperty;
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(this.getClass().getResource("/FXML/TaskViewWindow.fxml"));
+                loader.setResources(UtilsConnection.getBundles());
+                VBox pane = loader.load();
+                TaskViewController passData = loader.getController();
+                getTaskProperty = table.getSelectionModel().getSelectedItems();
+                if (!(getTaskProperty == null)) {
+                    passData.setContent(getTaskProperty.get(0).getLocalization(), getTaskProperty.get(0).getDescription());
+                    passData.setEngine(webEngine);
+                } else {
+                    Dialog.error(UtilsConnection.getBundles().getString("selectErr.taskView"));
+                }
+                Scene scene = new Scene(pane);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.getIcons().add(new Image("images/logo.png"));
+                stage.initStyle(StageStyle.UNDECORATED);
+                stage.setResizable(false);
+                stage.show();
+            } catch (IOException e) {
+                Dialog.error(UtilsConnection.getBundles().getString("newWindow.taskView"));
+            }
+        });
+
     }
 }
-
