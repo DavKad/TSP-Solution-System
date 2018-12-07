@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="641.0" y="523.5">tsp.solution.main.Launch</node>
+    <node x="1143.2761363636364" y="123.0">controllers.RouteProperties</node>
+    <node x="726.625" y="798.0">controllers.MainController</node>
+    <node x="0.0" y="512.0">controllers.TaskProperties</node>
+    <node x="245.0" y="434.5">controllers.TaskController</node>
+    <node x="765.2102272727273" y="0.0">utils.UtilsConnection</node>
+    <node x="693.75" y="167.5">dialogs.Dialog</node>
+    <node x="955.7380884041334" y="472.1630309988519">controllers.ReportController</node>
+    <node x="1470.2761363636364" y="402.0">controllers.TaskViewController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="controllers.ReportController" target="dialogs.Dialog">
+      <point x="-120.0" y="-81.0" />
+      <point x="991.125" y="377.0" />
+      <point x="1011.375" y="377.0" />
+      <point x="136.125" y="70.0" />
+    </edge>
+    <edge source="controllers.MainController" target="controllers.TaskViewController">
+      <point x="176.3636363636365" y="-345.0" />
+      <point x="1096.9886363636365" y="778.0" />
+      <point x="1625.2761363636364" y="778.0" />
+      <point x="0.0" y="158.0" />
+    </edge>
+    <edge source="controllers.MainController" target="controllers.RouteProperties">
+      <point x="70.5454545454545" y="-345.0" />
+      <point x="991.1704545454545" y="748.0" />
+      <point x="1333.625" y="748.0" />
+      <point x="1333.625" y="377.0" />
+      <point x="1296.2761363636364" y="377.0" />
+      <point x="0.0" y="114.5" />
+    </edge>
+    <edge source="controllers.ReportController" target="utils.UtilsConnection">
+      <point x="0.0" y="-81.0" />
+      <point x="1111.125" y="103.0" />
+      <point x="922.0102272727272" y="103.0" />
+      <point x="44.80000000000001" y="36.5" />
+    </edge>
+    <edge source="controllers.MainController" target="controllers.TaskProperties">
+      <point x="-70.5454545454545" y="-345.0" />
+      <point x="850.0795454545455" y="748.0" />
+      <point x="196.875" y="748.0" />
+      <point x="84.375" y="48.0" />
+    </edge>
+    <edge source="controllers.MainController" target="controllers.TaskController">
+      <point x="-35.27272727272725" y="-345.0" />
+      <point x="885.3522727272727" y="738.0" />
+      <point x="433.0" y="738.0" />
+      <point x="0.0" y="125.5" />
+    </edge>
+    <edge source="dialogs.Dialog" target="utils.UtilsConnection">
+      <point x="0.0" y="-70.0" />
+      <point x="875.25" y="103.0" />
+      <point x="877.2102272727273" y="103.0" />
+      <point x="0.0" y="36.5" />
+    </edge>
+    <edge source="controllers.MainController" target="controllers.ReportController">
+      <point x="35.27272727272725" y="-345.0" />
+      <point x="955.8977272727273" y="738.0" />
+      <point x="1111.125" y="738.0" />
+      <point x="0.0" y="81.0" />
+    </edge>
+    <edge source="controllers.TaskController" target="dialogs.Dialog">
+      <point x="94.0" y="-125.5" />
+      <point x="527.0" y="377.0" />
+      <point x="739.125" y="377.0" />
+      <point x="-136.125" y="70.0" />
+    </edge>
+    <edge source="controllers.MainController" target="utils.UtilsConnection">
+      <point x="141.090909090909" y="-345.0" />
+      <point x="1061.715909090909" y="768.0" />
+      <point x="1459.7761363636364" y="768.0" />
+      <point x="1459.7761363636364" y="93.0" />
+      <point x="966.8102272727272" y="93.0" />
+      <point x="89.60000000000002" y="36.5" />
+    </edge>
+    <edge source="controllers.MainController" target="dialogs.Dialog">
+      <point x="0.0" y="-345.0" />
+      <point x="45.375" y="70.0" />
+    </edge>
+    <edge source="tsp.solution.main.Launch" target="utils.UtilsConnection">
+      <point x="-42.25" y="-36.5" />
+      <point x="683.25" y="103.0" />
+      <point x="832.4102272727272" y="103.0" />
+      <point x="-44.80000000000001" y="36.5" />
+    </edge>
+    <edge source="tsp.solution.main.Launch" target="dialogs.Dialog">
+      <point x="42.25" y="-36.5" />
+      <point x="767.75" y="377.0" />
+      <point x="829.875" y="377.0" />
+      <point x="-45.375" y="70.0" />
+    </edge>
+    <edge source="controllers.ReportController" target="controllers.RouteProperties">
+      <point x="120.0" y="-81.0" />
+      <point x="1231.125" y="377.0" />
+      <point x="1194.2761363636364" y="377.0" />
+      <point x="-102.0" y="114.5" />
+    </edge>
+    <edge source="controllers.TaskController" target="utils.UtilsConnection">
+      <point x="-94.0" y="-125.5" />
+      <point x="339.0" y="93.0" />
+      <point x="787.6102272727272" y="93.0" />
+      <point x="-89.6" y="36.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7313182199832073" x="566.0" y="656.5" />
+  <SelectedNodes>
+    <node>controllers.ReportController</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

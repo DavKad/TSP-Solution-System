@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" build-on-make="true" name="Routing system">
+    <output-path>$PROJECT_DIR$/out/artifacts/Routing_system</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="tsp.solution.main.Launch" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="htmlTemplateFile" value="$PROJECT_DIR$/src/main/resources/html/map.html" />
+        <option name="title" value="Routing system." />
+        <option name="vendor" value="" />
+        <option name="version" value="1.0" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="TSP_System.jar">
+        <element id="module-output" name="TSP_System" />
+      </element>
+    </root>
+  </artifact>
+</component>

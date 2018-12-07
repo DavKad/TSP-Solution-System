@@ -1,5 +1,10 @@
 package controllers;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.pdf.draw.LineSeparator;
 import dialogs.Dialog;
 import javafx.fxml.FXML;
 import jdk.nashorn.internal.objects.annotations.Function;
@@ -9,10 +14,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import utils.UtilsConnection;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -101,13 +103,19 @@ public class ReportController {
                 content.append(((Text) x).getText());
             }
         }
+        Document document = new Document();
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(new File("Report.txt")));
-            writer.write(content.toString());
-            writer.close();
+            PdfWriter.getInstance(document, new FileOutputStream("Report.pdf"));
+            document.open();
+            document.add(new Paragraph("Generated report:"));
+            document.add(new LineSeparator());
+            document.add(new Paragraph(content.toString()));
+            document.close();
             Dialog.savedFile();
         } catch (IOException e) {
             Dialog.error(e.getMessage());
+        } catch (DocumentException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -1,7 +1,9 @@
 package controllers;
 
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -31,8 +33,19 @@ public class TaskViewController implements Initializable {
     @FXML
     private Button closeButton;
 
-
+    /*Data to execute in main window*/
     private WebEngine engine;
+    private ReadOnlyObjectWrapper<String> toRemove = new ReadOnlyObjectWrapper<>();
+
+    @Setter
+    Object getToRemove() {
+        return toRemove.get();
+    }
+
+    @Setter
+    ReadOnlyObjectWrapper toRemoveProperty() {
+        return toRemove;
+    }
 
     @Setter
     void setEngine(WebEngine engine) {
@@ -61,13 +74,28 @@ public class TaskViewController implements Initializable {
         deleteButton.setOnAction(event -> {
             Stage stage = (Stage) closeButton.getScene().getWindow();
             stage.close();
-            //table.getItems().removeAll(table.getSelectionModel().getSelectedItem());
+            StringBuilder value = new StringBuilder();
+            for(Node x : local.getChildren()){
+                value.append(((Text) x).getText());
+            }
+            toRemove.set(value.toString());
         });
         showButton.setOnAction(event -> {
             engine = this.getEngine();
+            StringBuilder value = new StringBuilder();
+            for (Node x : local.getChildren()) {
+                if (x instanceof Text) {
+                    value.append(((Text) x).getText());
+                }
+            }
             Stage stage = (Stage) closeButton.getScene().getWindow();
             stage.close();
-            engine.executeScript("map.setView([51.125736, 17.080392], 11);");
+            engine.executeScript(" for(var i = 0; i<markers.length; i++){\n" +
+                    "        if(markers[i].options.id === "+"'"+ value + "'" +" ){\n" +
+                    "            map.setView([markers[i].getLatLng().lat, markers[i].getLatLng().lng], 11);\n" +
+                    "        }\n" +
+                    "    }"
+            );
         });
     }
 }

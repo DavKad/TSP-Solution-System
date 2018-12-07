@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Routing system" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="396730dd-4047-4566-bff2-c55af41c5a56" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -140,41 +145,42 @@
     <session id="591087244">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.101" value="1" />
           <entry key="project.open.time.123" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.151" value="1" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.52" value="2" />
           <entry key="project.open.time.53" value="1" />
-          <entry key="project.open.time.57" value="1" />
+          <entry key="project.open.time.57" value="2" />
           <entry key="project.open.time.64" value="1" />
           <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.68" value="1" />
           <entry key="project.open.time.71" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="49" />
-          <entry key="dummy" value="15" />
+          <entry key="dummy" value="18" />
           <entry key="fxml" value="82" />
-          <entry key="html" value="12792" />
-          <entry key="java" value="22094" />
+          <entry key="html" value="12958" />
+          <entry key="java" value="23149" />
           <entry key="js" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="49" />
-          <entry key="HTML" value="12792" />
-          <entry key="JAVA" value="22094" />
+          <entry key="HTML" value="12958" />
+          <entry key="JAVA" value="23149" />
           <entry key="JavaScript" value="5" />
-          <entry key="PLAIN_TEXT" value="15" />
+          <entry key="PLAIN_TEXT" value="18" />
           <entry key="XML" value="82" />
         </counts>
       </usages-collector>
@@ -182,27 +188,29 @@
         <counts>
           <entry key="class" value="8" />
           <entry key="css" value="3" />
-          <entry key="fxml" value="53" />
-          <entry key="html" value="17" />
-          <entry key="java" value="175" />
+          <entry key="fxml" value="57" />
+          <entry key="html" value="19" />
+          <entry key="java" value="188" />
           <entry key="js" value="20" />
           <entry key="png" value="1" />
           <entry key="properties" value="23" />
           <entry key="ts" value="3" />
-          <entry key="xml" value="3" />
+          <entry key="uml" value="3" />
+          <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="8" />
           <entry key="CSS" value="3" />
-          <entry key="HTML" value="17" />
+          <entry key="HTML" value="19" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="175" />
+          <entry key="JAVA" value="188" />
           <entry key="JavaScript" value="20" />
           <entry key="Properties" value="23" />
           <entry key="TypeScript" value="3" />
-          <entry key="XML" value="56" />
+          <entry key="UML" value="3" />
+          <entry key="XML" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.mvc.usages" />
@@ -213,68 +221,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
-              <caret line="72" column="11" lean-forward="true" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="11" />
+            <state relative-caret-position="347">
+              <caret line="203" column="22" selection-start-line="203" selection-start-column="22" selection-end-line="203" selection-end-column="22" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#removeRouteSegment#0;class#MainController#0" />
                 <element signature="method#setRouteProperties#0;class#MainController#0" />
+                <element signature="method#openTask#0;class#MainController#0" />
                 <element signature="method#removeLocation#0;class#MainController#0" />
                 <element signature="method#closeApplication#0;class#MainController#0" />
                 <element signature="method#openReport#0;class#MainController#0" />
                 <element signature="method#openAbout#0;class#MainController#0" />
                 <element signature="method#setFunctionHandlerInHTML#0;class#MainController#0" />
-                <element signature="method#initialize#0;class#MainController#0" />
-                <element signature="e#6879#7415#0" />
-                <element signature="e#7955#9513#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/TaskController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/TaskViewController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="60" column="43" lean-forward="true" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#822#823#0" expanded="true" />
-                <element signature="e#864#865#0" expanded="true" />
-                <element signature="e#971#972#0" expanded="true" />
-                <element signature="e#1003#1004#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/html/map.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1523">
-              <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
-              <folding>
-                <element signature="n#link#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#script#1;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#link#1;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#script#2;n#head#0;n#html#0;n#!!top" />
-                <element signature="e#11#17#0" expanded="true" />
+                <element signature="e#7304#7878#0" />
+                <element signature="e#8150#8612#0" />
+                <element signature="e#8704#10247#0" />
+                <marker date="1544084010140" expanded="true" signature="2530:2531" ph="..." />
               </folding>
             </state>
           </provider>
@@ -299,6 +263,7 @@
       <find>getController</find>
       <find>options</find>
       <find>url</find>
+      <find>clear</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -312,7 +277,6 @@
         <option value="$PROJECT_DIR$/src/main/java/map/InteractiveMap.java" />
         <option value="$PROJECT_DIR$/src/main/resources/html/mapLoader.html" />
         <option value="$PROJECT_DIR$/src/main/resources/html/mapByGLJS.html" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/setMarker.js" />
         <option value="$PROJECT_DIR$/src/main/resources/javascript/setMarker.js" />
         <option value="$PROJECT_DIR$/src/main/resources/javascript/setMarkerOnce.js" />
@@ -334,20 +298,21 @@
         <option value="$PROJECT_DIR$/src/main/resources/html/testMaps.html" />
         <option value="$PROJECT_DIR$/src/main/resources/css/searchStyle.css" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/RouteProperties.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/ReportController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/FXML/ReportWindow.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/TaskManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tsp/solution/main/Launch.java" />
         <option value="$PROJECT_DIR$/src/main/java/dialogs/Dialog.java" />
         <option value="$PROJECT_DIR$/src/main/resources/FXML/TaskWindow.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/TaskController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/TaskProperty.java" />
         <option value="$PROJECT_DIR$/src/main/resources/bundles/messages.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/FXML/TaskViewWindow.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/FXML/MainWindow.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tsp/solution/main/Launch.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/TaskViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/FXML/MainWindow.fxml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/ReportController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/html/map.html" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
       </list>
     </option>
   </component>
@@ -403,7 +368,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -414,6 +379,17 @@
             <path>
               <item name="TSP_System" type="b2602c69:ProjectViewProjectNode" />
               <item name="TSP_System" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TSP_System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TSP_System" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TSP_System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TSP_System" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -434,23 +410,7 @@
               <item name="TSP_System" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TSP_System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TSP_System" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TSP_System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TSP_System" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="bundles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TSP_System" type="b2602c69:ProjectViewProjectNode" />
@@ -460,7 +420,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -469,15 +429,15 @@
     <property name="SearchEverywhereHistoryKey" value="{&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543016379151" />
-    <property name="last_opened_file_path" value="E:/Git_ROOT/TSP Solution System/TSP_System" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544138944288" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/html/map.html" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -552,12 +512,14 @@
       <workItem from="1542557430447" duration="34318000" />
       <workItem from="1542893658640" duration="20580000" />
       <workItem from="1542929910234" duration="20000" />
-      <workItem from="1542958757970" duration="21357000" />
+      <workItem from="1542958757970" duration="45750000" />
+      <workItem from="1543672139386" duration="12676000" />
+      <workItem from="1544036483374" duration="6178000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="420235000" />
+    <option name="totallyTimeSpent" value="463482000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -569,7 +531,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -578,14 +540,14 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Learn" order="4" weight="0.32995737" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.18710022" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.1913646" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50053304" side_tool="true" weight="0.3264642" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49946696" weight="0.3264642" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" sideWeight="0.49840087" visible="true" weight="0.31236443" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.49840087" weight="0.31236443" />
       <window_info anchor="bottom" id="Debug" order="6" sideWeight="0.49946696" weight="0.5173536" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
@@ -610,20 +572,20 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Learn" order="4" weight="0.32995737" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.16950959" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.18710022" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50053304" side_tool="true" weight="0.3264642" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49946696" weight="0.3264642" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.49840087" weight="0.31236443" />
-      <window_info anchor="bottom" id="Debug" order="6" sideWeight="0.49946696" weight="0.5195228" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.3286334" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.49840087" visible="true" weight="0.31236443" />
+      <window_info anchor="bottom" id="Debug" order="6" sideWeight="0.49946696" weight="0.5173536" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" weight="0.3286334" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.3253796" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.324295" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.329718" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -633,7 +595,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Database" order="8" weight="0.32932165" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -652,14 +614,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/javascript/lrm-esri.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/html/javascript/lrm-esri.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="291" column="27" selection-start-line="291" selection-start-column="27" selection-end-line="291" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/html/map2.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/html/javascript/L.Routing.TomTom.js" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_unpkg.com_esri-leaflet@2.2.3_dist_esri-leaflet.js">
@@ -704,13 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/RouteProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/Programy/jdk1.8.0_161/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
@@ -726,12 +673,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/ReportWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="40" column="44" lean-forward="true" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/TaskManager.java" />
     <entry file="jar://E:/Programy/jdk1.8.0_161/javafx-src.zip!/javafx/scene/control/Labeled.java">
@@ -781,18 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/ReportController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="102" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#timeFormat#0;class#ReportController#0" />
-            <element signature="method#setText#0;class#ReportController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/Programy/jdk1.8.0_161/javafx-src.zip!/javafx/scene/control/ListView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -818,9 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
           <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="e#1722#1723#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -853,12 +785,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/TaskWindow.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="237" selection-start-line="8" selection-start-column="237" selection-end-line="8" selection-end-column="237" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="jar://E:/Programy/jdk1.8.0_161/jre/lib/rt.jar!/java/util/List.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -871,13 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
           <caret line="137" selection-start-line="137" selection-end-line="137" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tsp/solution/main/Launch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -965,22 +890,28 @@
       <provider selected="true" editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/TaskViewWindow.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/MainWindow.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="82" column="53" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tsp/solution/main/Launch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/TaskProperty.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/RouteProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/TaskProperties.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
@@ -989,59 +920,117 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/TaskController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
+        <state relative-caret-position="500">
           <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_UML.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">tsp.solution.main.Launch</node>
+            <node x="" y="">controllers.RouteProperties</node>
+            <node x="" y="">controllers.MainController</node>
+            <node x="" y="">controllers.TaskProperties</node>
+            <node x="" y="">controllers.TaskController</node>
+            <node x="" y="">utils.UtilsConnection</node>
+            <node x="" y="">dialogs.Dialog</node>
+            <node x="" y="">controllers.ReportController</node>
+            <node x="" y="">controllers.TaskViewController</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.7313182199832073" x="566.0" y="657.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/MainWindow.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="164" selection-start-line="22" selection-start-column="164" selection-end-line="22" selection-end-column="164" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/TaskViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="60" column="43" lean-forward="true" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
+        <state relative-caret-position="272">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#822#823#0" expanded="true" />
-            <element signature="e#864#865#0" expanded="true" />
-            <element signature="e#971#972#0" expanded="true" />
-            <element signature="e#1003#1004#0" expanded="true" />
+            <element signature="method#setContent#0;class#TaskViewController#0" />
+            <element signature="e#1691#1808#0" />
+            <element signature="e#1844#2173#0" />
+            <element signature="e#2207#2955#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="72" column="11" lean-forward="true" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="11" />
+        <state relative-caret-position="765">
+          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/ReportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#removeRouteSegment#0;class#MainController#0" />
-            <element signature="method#setRouteProperties#0;class#MainController#0" />
-            <element signature="method#removeLocation#0;class#MainController#0" />
-            <element signature="method#closeApplication#0;class#MainController#0" />
-            <element signature="method#openReport#0;class#MainController#0" />
-            <element signature="method#openAbout#0;class#MainController#0" />
-            <element signature="method#setFunctionHandlerInHTML#0;class#MainController#0" />
-            <element signature="method#initialize#0;class#MainController#0" />
-            <element signature="e#6879#7415#0" />
-            <element signature="e#7955#9513#0" />
+            <element signature="method#timeFormat#0;class#ReportController#0" />
+            <element signature="method#setText#0;class#ReportController#0" />
+            <element signature="method#saveReport#0;class#ReportController#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/html/map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1523">
-          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+        <state relative-caret-position="221">
+          <caret line="29" column="108" selection-start-line="29" selection-start-column="108" selection-end-line="29" selection-end-column="108" />
           <folding>
             <element signature="n#link#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#script#1;n#head#0;n#html#0;n#!!top" />
             <element signature="n#link#1;n#head#0;n#html#0;n#!!top" />
             <element signature="n#script#2;n#head#0;n#html#0;n#!!top" />
-            <element signature="e#11#17#0" expanded="true" />
+            <element signature="e#10#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="203" column="22" selection-start-line="203" selection-start-column="22" selection-end-line="203" selection-end-column="22" />
+          <folding>
+            <element signature="method#removeRouteSegment#0;class#MainController#0" />
+            <element signature="method#setRouteProperties#0;class#MainController#0" />
+            <element signature="method#openTask#0;class#MainController#0" />
+            <element signature="method#removeLocation#0;class#MainController#0" />
+            <element signature="method#closeApplication#0;class#MainController#0" />
+            <element signature="method#openReport#0;class#MainController#0" />
+            <element signature="method#openAbout#0;class#MainController#0" />
+            <element signature="method#setFunctionHandlerInHTML#0;class#MainController#0" />
+            <element signature="e#7304#7878#0" />
+            <element signature="e#8150#8612#0" />
+            <element signature="e#8704#10247#0" />
+            <marker date="1544084010140" expanded="true" signature="2530:2531" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1052,10 +1041,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>Routing system</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1112,7 +1103,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: com.dukescript.api:leaflet4j:0.7</last-edited>
+          <last-edited>Maven: com.itextpdf:itextpdf:5.5.13</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

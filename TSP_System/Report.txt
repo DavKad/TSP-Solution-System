@@ -1,3 +1,0 @@
-Total time and distance for the determined route:
-   -> 07:13:53 
-   -> 559.90 km.

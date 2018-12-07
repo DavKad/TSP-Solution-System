@@ -8,6 +8,7 @@ import javafx.concurrent.Worker;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.StageStyle;
 import jdk.nashorn.internal.objects.annotations.Getter;
@@ -37,16 +38,17 @@ public class MainController implements Initializable {
 
     @FXML
     public Button clearButton;
+    public BorderPane borderPane;
 
     @FXML
-    private TableView<TaskProperty> table;
+    private TableView<TaskProperties> table;
 
     @FXML
-    public TableColumn<TaskProperty, String> localization = new TableColumn<>();
+    public TableColumn<TaskProperties, String> localization = new TableColumn<>();
 
     @FXML
-    public TableColumn<TaskProperty, String> description = new TableColumn<>();
-    private ObservableList<TaskProperty> taskList = FXCollections.observableArrayList();
+    public TableColumn<TaskProperties, String> description = new TableColumn<>();
+    private ObservableList<TaskProperties> taskList = FXCollections.observableArrayList();
 
     @FXML
     private ListView<String> listOfInterest;
@@ -97,11 +99,6 @@ public class MainController implements Initializable {
     }
 
     @Function
-    public void clearRoute() {
-        getRouteData.clear();
-    }
-
-    @Function
     public void setRouteProperties(String time, Double distance, String nodeA, String nodeB) {
         Double dTime = Double.parseDouble(time);
         this.time = dTime.longValue();
@@ -121,7 +118,7 @@ public class MainController implements Initializable {
             TaskController passData = loader.getController();
             passData.setText(this.getNameOfPlace());
             passData.getTaskStatusProperty().addListener(s -> {
-                taskList.add(new TaskProperty(passData.getLocalization(), passData.getTask()));
+                taskList.add(new TaskProperties(passData.getLocalization(), passData.getTask()));
                 table.setItems(taskList);
             });
             Scene scene = new Scene(splitPane);
@@ -134,7 +131,6 @@ public class MainController implements Initializable {
         } catch (IOException e) {
             Dialog.error(UtilsConnection.getBundles().getString("error.task") + e.getMessage());
         }
-
     }
 
     @Function
@@ -147,7 +143,7 @@ public class MainController implements Initializable {
         listOfInterest.getItems().remove(location);
         if(!(table.getItems() ==null)){
             for(int i = 0; i <table.getItems().size(); i++){
-                TaskProperty x = table.getItems().get(i);
+                TaskProperties x = table.getItems().get(i);
                 if(x.getLocalization().equals(location)){
                     table.getItems().remove(x);
                 }
@@ -205,12 +201,13 @@ public class MainController implements Initializable {
 
         //Loading map through HTML file
         try {
-            URL url = this.getClass().getResource("/html/map.html");
+            URL url = getClass().getResource("/html/map.html");
             webEngine = webView.getEngine();
             webEngine.setJavaScriptEnabled(true);
             webEngine.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
                 if (newValue == Worker.State.SUCCEEDED) {
                     setFunctionHandlerInHTML(webEngine, "app", this);
+                    borderPane.setDisable(false);
                 }
             });
             webEngine.load(url.toString());
@@ -237,21 +234,34 @@ public class MainController implements Initializable {
         localization.setCellValueFactory(new PropertyValueFactory<>("Localization"));
         description.setCellValueFactory(new PropertyValueFactory<>("Description"));
 
+        listOfInterest.getSelectionModel().getSelectedItems().addListener((InvalidationListener) event -> {
+            String value = listOfInterest.getSelectionModel().getSelectedItem();
+            webEngine.executeScript(" for(var i = 0; i<markers.length; i++){\n" +
+                    "        if(markers[i].options.id === "+"'"+ value + "'" +" ){\n" +
+                    "            map.setView([markers[i].getLatLng().lat, markers[i].getLatLng().lng], 9);\n" +
+                    "        }\n" +
+                    "    }"
+            );
+        });
+
         table.getSelectionModel().getSelectedCells().addListener((InvalidationListener) select -> {
-            ObservableList<TaskProperty> getTaskProperty;
+            ObservableList<TaskProperties> getTaskProperties;
             try {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(this.getClass().getResource("/FXML/TaskViewWindow.fxml"));
                 loader.setResources(UtilsConnection.getBundles());
                 VBox pane = loader.load();
                 TaskViewController passData = loader.getController();
-                getTaskProperty = table.getSelectionModel().getSelectedItems();
-                if (!(getTaskProperty == null)) {
-                    passData.setContent(getTaskProperty.get(0).getLocalization(), getTaskProperty.get(0).getDescription());
+                getTaskProperties = table.getSelectionModel().getSelectedItems();
+                if (!(getTaskProperties == null)) {
+                    passData.setContent(getTaskProperties.get(0).getLocalization(), getTaskProperties.get(0).getDescription());
                     passData.setEngine(webEngine);
                 } else {
                     Dialog.error(UtilsConnection.getBundles().getString("selectErr.taskView"));
                 }
+                passData.toRemoveProperty().addListener(event -> {
+                    table.getItems().removeIf(p -> p.getLocalization().equals(passData.getToRemove()));
+                });
                 Scene scene = new Scene(pane);
                 Stage stage = new Stage();
                 stage.setScene(scene);
@@ -259,10 +269,12 @@ public class MainController implements Initializable {
                 stage.initStyle(StageStyle.UNDECORATED);
                 stage.setResizable(false);
                 stage.show();
+                if (!stage.isFocused()) {
+                    stage.close();
+                }
             } catch (IOException e) {
                 Dialog.error(UtilsConnection.getBundles().getString("newWindow.taskView"));
             }
         });
-
     }
 }
