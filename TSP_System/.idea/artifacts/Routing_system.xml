@@ -15,6 +15,7 @@
     <root id="root">
       <element id="archive" name="TSP_System.jar">
         <element id="module-output" name="TSP_System" />
+        <element id="dir-copy" path="$PROJECT_DIR$/src/main/resources" />
       </element>
     </root>
   </artifact>

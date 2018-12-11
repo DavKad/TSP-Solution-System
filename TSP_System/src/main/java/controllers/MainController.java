@@ -25,6 +25,7 @@ import javafx.stage.Stage;
 import jdk.nashorn.internal.objects.annotations.Function;
 import javafx.fxml.FXML;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -201,7 +202,6 @@ public class MainController implements Initializable {
 
         //Loading map through HTML file
         try {
-            URL url = getClass().getResource("/html/map.html");
             webEngine = webView.getEngine();
             webEngine.setJavaScriptEnabled(true);
             webEngine.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
@@ -210,7 +210,7 @@ public class MainController implements Initializable {
                     borderPane.setDisable(false);
                 }
             });
-            webEngine.load(url.toString());
+            webEngine.load(MainController.class.getResource("/html/map.html").toString());
         } catch (Exception e) {
             Dialog.error(UtilsConnection.getBundles().getString("error.map"));
         } finally {

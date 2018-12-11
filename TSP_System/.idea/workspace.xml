@@ -145,12 +145,14 @@
     <session id="591087244">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.101" value="1" />
           <entry key="project.open.time.123" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.151" value="1" />
+          <entry key="project.open.time.161" value="1" />
+          <entry key="project.open.time.211" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.51" value="1" />
@@ -161,7 +163,7 @@
           <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.68" value="1" />
           <entry key="project.open.time.71" value="1" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -170,7 +172,7 @@
           <entry key="dummy" value="18" />
           <entry key="fxml" value="82" />
           <entry key="html" value="12958" />
-          <entry key="java" value="23149" />
+          <entry key="java" value="23366" />
           <entry key="js" value="5" />
         </counts>
       </usages-collector>
@@ -178,7 +180,7 @@
         <counts>
           <entry key="CSS" value="49" />
           <entry key="HTML" value="12958" />
-          <entry key="JAVA" value="23149" />
+          <entry key="JAVA" value="23366" />
           <entry key="JavaScript" value="5" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="XML" value="82" />
@@ -224,21 +226,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="203" column="22" selection-start-line="203" selection-start-column="22" selection-end-line="203" selection-end-column="22" />
+            <state relative-caret-position="427">
+              <caret line="84" selection-start-line="84" selection-end-line="84" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#removeRouteSegment#0;class#MainController#0" />
-                <element signature="method#setRouteProperties#0;class#MainController#0" />
                 <element signature="method#openTask#0;class#MainController#0" />
                 <element signature="method#removeLocation#0;class#MainController#0" />
                 <element signature="method#closeApplication#0;class#MainController#0" />
                 <element signature="method#openReport#0;class#MainController#0" />
                 <element signature="method#openAbout#0;class#MainController#0" />
                 <element signature="method#setFunctionHandlerInHTML#0;class#MainController#0" />
-                <element signature="e#7304#7878#0" />
-                <element signature="e#8150#8612#0" />
-                <element signature="e#8704#10247#0" />
-                <marker date="1544084010140" expanded="true" signature="2530:2531" ph="..." />
+                <marker date="1544550440814" expanded="true" signature="2551:2552" ph="..." />
               </folding>
             </state>
           </provider>
@@ -335,7 +334,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -369,23 +368,13 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="TSP_System" type="b2602c69:ProjectViewProjectNode" />
               <item name="TSP_System" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TSP_System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TSP_System" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TSP_System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TSP_System" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TSP_System" type="b2602c69:ProjectViewProjectNode" />
@@ -414,13 +403,20 @@
             </path>
             <path>
               <item name="TSP_System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TSP_System" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TSP_System" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -429,8 +425,8 @@
     <property name="SearchEverywhereHistoryKey" value="{&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544138944288" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/html/map.html" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544215981315" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -440,16 +436,16 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Pulpit\TSP_System\src\main\resources\FXML" />
-      <recent name="E:\Git_ROOT\TSP Solution System\TSP_System\src\main\resources\leaflet\locate" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Pulpit\TSP_System\src\main\resources" />
       <recent name="E:\Pulpit\TSP_System\src\main\resources\html" />
       <recent name="E:\Git_ROOT\TSP Solution System\TSP_System\src\main\resources\javascript" />
       <recent name="E:\Git_ROOT\TSP Solution System\TSP_System\src\main\resources\leaflet" />
       <recent name="E:\Dokumenty\IntelliJ Projects\TSP_System\src\main\resources\html" />
-      <recent name="E:\Dokumenty\IntelliJ Projects\TSP_System\src\main\resources\FXML" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Pulpit\TSP_System\src\main\resources\FXML" />
+      <recent name="E:\Git_ROOT\TSP Solution System\TSP_System\src\main\resources\leaflet\locate" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -514,12 +510,14 @@
       <workItem from="1542929910234" duration="20000" />
       <workItem from="1542958757970" duration="45750000" />
       <workItem from="1543672139386" duration="12676000" />
-      <workItem from="1544036483374" duration="6178000" />
+      <workItem from="1544036483374" duration="12358000" />
+      <workItem from="1544549532191" duration="1066000" />
+      <workItem from="1544551987317" duration="148000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="463482000" />
+    <option name="totallyTimeSpent" value="470876000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -531,7 +529,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -540,20 +538,20 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Learn" order="4" weight="0.32995737" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.1913646" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.14605543" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50053304" side_tool="true" weight="0.3264642" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49946696" weight="0.3264642" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.49840087" weight="0.31236443" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.49840087" weight="0.30802602" />
       <window_info anchor="bottom" id="Debug" order="6" sideWeight="0.49946696" weight="0.5173536" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" weight="0.3286334" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.324295" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3242059" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.329718" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -673,12 +671,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/ReportWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="40" column="44" lean-forward="true" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/TaskManager.java" />
     <entry file="jar://E:/Programy/jdk1.8.0_161/javafx-src.zip!/javafx/scene/control/Labeled.java">
@@ -696,8 +694,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/bundles/messages_pl.properties">
-      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="ResourceBundle" />
+      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dialogs/Dialog.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -785,12 +783,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/TaskWindow.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="237" selection-start-line="8" selection-start-column="237" selection-end-line="8" selection-end-column="237" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="jar://E:/Programy/jdk1.8.0_161/jre/lib/rt.jar!/java/util/List.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -810,14 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="1914" selection-start-line="1914" selection-end-line="1914" />
-          <folding>
-            <element signature="e#46945#46946#0" expanded="true" />
-            <element signature="e#46988#46989#0" expanded="true" />
-            <element signature="e#90897#90898#0" expanded="true" />
-            <element signature="e#90967#90968#0" expanded="true" />
-            <element signature="e#91014#91015#0" expanded="true" />
-            <element signature="e#91084#91085#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -825,10 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="2494" selection-start-line="2494" selection-end-line="2494" />
-          <folding>
-            <element signature="e#66617#66618#0" expanded="true" />
-            <element signature="e#66663#66664#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -882,20 +868,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/bundles/messages.properties">
+      <provider selected="true" editor-type-id="ResourceBundle" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/TaskViewWindow.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tsp/solution/main/Launch.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -958,24 +944,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/FXML/MainWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="22" column="164" selection-start-line="22" selection-start-column="164" selection-end-line="22" selection-end-column="164" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/TaskViewController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setContent#0;class#TaskViewController#0" />
-            <element signature="e#1691#1808#0" />
-            <element signature="e#1844#2173#0" />
-            <element signature="e#2207#2955#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1003,34 +982,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="29" column="108" selection-start-line="29" selection-start-column="108" selection-end-line="29" selection-end-column="108" />
-          <folding>
-            <element signature="n#link#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#script#1;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#link#1;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#script#2;n#head#0;n#html#0;n#!!top" />
-            <element signature="e#10#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="203" column="22" selection-start-line="203" selection-start-column="22" selection-end-line="203" selection-end-column="22" />
+        <state relative-caret-position="427">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#removeRouteSegment#0;class#MainController#0" />
-            <element signature="method#setRouteProperties#0;class#MainController#0" />
             <element signature="method#openTask#0;class#MainController#0" />
             <element signature="method#removeLocation#0;class#MainController#0" />
             <element signature="method#closeApplication#0;class#MainController#0" />
             <element signature="method#openReport#0;class#MainController#0" />
             <element signature="method#openAbout#0;class#MainController#0" />
             <element signature="method#setFunctionHandlerInHTML#0;class#MainController#0" />
-            <element signature="e#7304#7878#0" />
-            <element signature="e#8150#8612#0" />
-            <element signature="e#8704#10247#0" />
-            <marker date="1544084010140" expanded="true" signature="2530:2531" ph="..." />
+            <marker date="1544550440814" expanded="true" signature="2551:2552" ph="..." />
           </folding>
         </state>
       </provider>
